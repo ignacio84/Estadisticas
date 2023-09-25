@@ -1,0 +1,66 @@
+<div class="grid flex-column">
+	<div class="col-12 md:col-6" *ngIf="!isSave">
+		<div class="card p-fluid">
+			<h5>¡Regístrate y recibe una tarjeta de regalo de Amazon!</h5>
+			<p class="text-justify">Sabemos lo que te gusta: una amplia selección de productos, entregas rápidas y la comodidad de comprar
+				desde tu hogar. ¡Y ahora, puedes disfrutar aún más de tus compras en Amazon con una tarjeta de regalo de
+				cortesía al registrarte con nosotros!
+				¿Cómo puedes obtener tu tarjeta de regalo de Amazon? Es fácil y rápido:
+				Regístrate: Regístrate en nuestro sitio web o aplicación móvil. Es un proceso sencillo que solo te
+				llevará unos minutos.
+				Explora: Una vez que estés registrado, explora nuestro catálogo de productos y descubre una amplia gama
+				de artículos emocionantes que te están esperando.
+				Compra: Realiza una compra que te haga feliz. ¡La elección es tuya! Desde moda y electrónica hasta
+				productos para el hogar y más, Amazon tiene todo lo que necesitas.
+				Recibe tu recompensa: Una vez que completes tu primera compra, recibirás una tarjeta de regalo de Amazon
+				para que la uses en futuras compras. ¡Es como recibir un regalo por comprar lo que ya querías!
+				No dejes pasar esta oportunidad de llevar tus compras en línea al siguiente nivel. ¡Regístrate hoy mismo
+				y recibe una tarjeta de regalo de Amazon para que disfrutes de una experiencia de compra inigualable!
+				Condiciones aplican. Oferta por tiempo limitado. Regístrate ahora y comienza a comprar con estilo en
+				Amazon.</p>
+		</div>
+	</div>
+	<div class="col-12 md:col-6" *ngIf="!isSave">
+		<form [formGroup]="estForm" (ngSubmit)="submit()">
+			<div class="card p-fluid">
+				<h5>Registrate</h5>
+				<div class="field">
+					<label htmlFor="name1">Nombre</label>
+					<input pInputText id="name1" type="text" class="border-noround"  formControlName="Nombre" autocomplete="off"/>
+				</div>
+				<div class="field">
+					<label htmlFor="email1">E-Mail</label>
+					<input pInputText id="email1" type="text" class="border-noround" formControlName="Email" autocomplete="off"/>
+				</div>
+				<div class="field col-12 md:col-6">
+					<button type="submit" pButton pRipple  label="Registrar"
+						class="p-button-success border-noround" [disabled]="estForm.invalid" ></button>
+				</div>
+			</div>
+		</form>
+
+		<!-- <div class="card p-fluid">
+			<h5>Vertical Grid</h5>
+			<div class="p-formgrid grid">
+				<div class="field col">
+					<label htmlFor="name2">Name</label>
+					<input pInputText id="name2" type="text" />
+				</div>
+				<div class="field col">
+					<label htmlFor="email2">Email</label>
+					<input pInputText id="email2" type="text" />
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div class="col-12 md:col-6" *ngIf="isSave">
+		<div class="card p-fluid">
+			<h6>¡Gracias por Registrarte! Tu Tarjeta de Regalo Amazon está en Camino</h6>
+			<p class="text-justify">Queremos celebrar este momento especial contigo, y como muestra de nuestro agradecimiento, hemos preparado una sorpresa para ti. 
+				¡Estás a punto de recibir una Tarjeta de Regalo de Amazon! Esta tarjeta te permitirá disfrutar de una amplia variedad de productos en la tienda 
+				más grande del mundo en línea.Recuerda mantener un ojo en tu bandeja de entrada y, si no ves el correo, verifica tu carpeta de spam o correo no deseado, 
+				ya que ocasionalmente los mensajes importantes pueden terminar allí.</p>
+		</div>
+	</div>
+</div>
+<p-toast key="tst" position="bottom-center"></p-toast>
