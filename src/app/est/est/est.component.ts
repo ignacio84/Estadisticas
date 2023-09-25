@@ -31,6 +31,8 @@ export class EstComponent {
       .subscribe(
         resp => {
           this.isSave = true;
+          this.estForm.reset();
+          this.est$?.unsubscribe();
         },
         err => {
           let msj:string = 'Error desconocido!!';
@@ -45,5 +47,4 @@ export class EstComponent {
           this.service.add({ key: 'tst',life:9999, severity: 'error', summary: 'Error', detail: msj });
         });
   }
-
 }

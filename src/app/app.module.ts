@@ -59,7 +59,7 @@ import { MessageService } from 'primeng/api';
         
     ],
     providers: [
-        { provide: LocationStrategy, useClass: HashLocationStrategy },
+        //{ provide: LocationStrategy, useClass: HashLocationStrategy },// HashLocationStrategy -> framentacion de rutas agrega el simbolo # a las rutas
         CountryService, CustomerService, EventService, IconService, NodeService,
         PhotoService, ProductService, MessageService
     ],
